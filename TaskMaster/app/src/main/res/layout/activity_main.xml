@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:onClick="studyingBtn"
-            android:text="Studying"
+            android:text="@string/studying"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="readingBtn"
-            android:text="Reading"
+            android:text="@string/reading"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Studying" />
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="sportBtn"
-            android:text="Sport"
+            android:text="@string/sport"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Reading" />
