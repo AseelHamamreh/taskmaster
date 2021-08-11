@@ -32,6 +32,19 @@ the User can add his UserName from the settings button and it will be saved by S
 
 ***
 
+## RecyclerView
+the home page now has a recycled view and the user can view many tasks.
+if the user click at any task he see the task details.
+
+### Home page:
+![home](https://github.com/AseelHamamreh/taskmaster/blob/main/screetshots/home3.jpg)
+
+#### TaskDetails:
+![task details](https://github.com/AseelHamamreh/taskmaster/blob/main/screetshots/taskDetails2.jpg)
+
+
+***
+
 ## To run this app:
 1. clone the repo: ```https://github.com/AseelHamamreh/taskmaster.git```
 2. open the repo by Android Studio.
