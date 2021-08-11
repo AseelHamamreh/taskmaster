@@ -13,6 +13,7 @@ public class allTasksPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("All Tasks");
         setContentView(R.layout.activity_all_tasks_page);
     }
 }

@@ -11,9 +11,16 @@ public class TaskDetailsPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Task Details");
         setContentView(R.layout.activity_task_details_page);
+
+
         Intent i =getIntent();
         String title = i.getStringExtra("title");
+        String Description = i.getStringExtra("description");
+        String status = i.getStringExtra("status");
         ((TextView)findViewById(R.id.showTitle)).setText(title);
+        ((TextView)findViewById(R.id.showDescription)).setText(Description);
+        ((TextView)findViewById(R.id.showStatus)).setText(status);
     }
 }
