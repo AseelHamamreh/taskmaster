@@ -16,6 +16,7 @@ public class settingsPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Settings");
         setContentView(R.layout.activity_settings_page);
         sharedPreferences = getSharedPreferences("data", Context.MODE_PRIVATE);
     }

@@ -11,7 +11,7 @@
         android:theme="@style/Theme.TaskMaster">
         <activity android:name=".settingsPage" android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".TaskDetailsPage" />
+        <activity android:name=".TaskDetailsPage" android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".AddTaskPage"
             android:parentActivityName=".MainActivity" />
