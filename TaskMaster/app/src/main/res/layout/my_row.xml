@@ -8,10 +8,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="391dp"
-        android:layout_height="200dp"
+        android:layout_width="403dp"
+        android:layout_height="231dp"
         tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="-3dp" >
+        tools:layout_editor_absoluteY="-3dp">
 
         <TextView
             android:id="@+id/textTitle"
@@ -20,9 +20,10 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
+            android:onClick="showDetails"
             android:text="TextView"
-            android:textStyle="bold"
             android:textSize="20dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
