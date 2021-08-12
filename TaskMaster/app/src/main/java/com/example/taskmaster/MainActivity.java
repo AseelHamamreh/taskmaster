@@ -3,6 +3,7 @@ package com.example.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,11 +17,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TaskDao taskDao;
+    private AppDataBase appDataBase;
+
     public static final String TASK_TITLE = "taskTitle";
     public static final String TASK_BODY = "taskBody";
     public static final String TASK_STATUS = "taskStatus";
 
-    private List<Task> taskList;
+    private List<Task> taskList = new ArrayList<>();
     private myAdapter adapter;
 
 
@@ -29,8 +34,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //dataBase:
+        appDataBase = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "tasks").allowMainThreadQueries().build();
+        taskDao = appDataBase.taskDao();
+        taskList = taskDao.findAll();
+
         RecyclerView taskRecyclerView = findViewById(R.id.songList);
-        taskList = new ArrayList<>();
+
 
         Task task1 = new Task("Reading", "raed about Rooms in Android", "assigned");
         Task task2 = new Task("lab", "do lab #28", "complete");

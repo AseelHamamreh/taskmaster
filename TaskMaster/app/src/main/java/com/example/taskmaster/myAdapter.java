@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
     List<Task> data;
     Context context;
+
 
     public myAdapter(Context ct, List<Task> l){
         context = ct;
@@ -50,6 +52,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
     }
 
+
+
     @Override
     public int getItemCount() {
         return data.size();
@@ -58,6 +62,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView17 , textView15, textView12;
+
         ConstraintLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -68,4 +73,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
+
+
+
 }

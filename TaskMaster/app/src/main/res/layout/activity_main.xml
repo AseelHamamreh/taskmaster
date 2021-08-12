@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="91dp">
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <ImageView
             android:id="@+id/settingsIcon"
@@ -29,8 +29,11 @@
             android:id="@+id/textView11"
             android:layout_width="115dp"
             android:layout_height="34dp"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="136dp"
+            android:textStyle="bold"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/songList" />
 
@@ -38,11 +41,10 @@
             android:id="@+id/Studying"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:onClick="studyingBtn"
             android:text="@string/studying"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -50,10 +52,11 @@
             android:id="@+id/Reading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="76dp"
             android:onClick="readingBtn"
             android:text="@string/reading"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -61,12 +64,11 @@
             android:id="@+id/Sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginTop="132dp"
             android:onClick="sportBtn"
             android:text="@string/sport"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <androidx.recyclerview.widget.RecyclerView
