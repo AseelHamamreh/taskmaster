@@ -45,6 +45,16 @@ if the user click at any task he see the task details.
 
 ***
 
+## Room
+the user now can add a task and its discription and these data will be saved in the data base and rendered by the adapter as recycled view.
+
+#### AddTask Page:
+![addTask](https://github.com/AseelHamamreh/taskmaster/blob/main/screetshots/addTask2.jpg)
+
+### Home page:
+![home](https://github.com/AseelHamamreh/taskmaster/blob/main/screetshots/home4.jpg)
+
+
 ## To run this app:
 1. clone the repo: ```https://github.com/AseelHamamreh/taskmaster.git```
 2. open the repo by Android Studio.
