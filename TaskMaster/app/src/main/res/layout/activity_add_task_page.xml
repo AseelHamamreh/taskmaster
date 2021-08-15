@@ -29,7 +29,6 @@
                 android:layout_marginTop="35dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Do Something"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="23dp" />
 
@@ -76,7 +75,6 @@
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="in progress"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/statusView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -141,7 +139,6 @@
             android:layout_marginTop="35dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="My Task"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="23dp" />
 
