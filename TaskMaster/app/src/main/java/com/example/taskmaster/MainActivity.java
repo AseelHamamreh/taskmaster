@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         appDataBase = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "tasks").allowMainThreadQueries().build();
         taskDao = appDataBase.taskDao();
         taskList = taskDao.findAll();
+        Collections.reverse(taskList);
+
 
         RecyclerView taskRecyclerView = findViewById(R.id.songList);
 
