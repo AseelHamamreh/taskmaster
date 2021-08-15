@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/allTasks"
+        android:id="@+id/AddNewTask"
         android:layout_width="132dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
