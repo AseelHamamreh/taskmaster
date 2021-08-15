@@ -4,7 +4,6 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,8 +31,8 @@ public class EspressoTest {
     public void addNewTaskTest(){
         onView(withId(R.id.AddNewTask)).perform(click());
 
-        onView(withId(R.id.myTitle)).perform(typeText("New Task"),closeSoftKeyboard());
-        onView(withId(R.id.myDescription)).perform(typeText("Do Something"),closeSoftKeyboard());
+        onView(withId(R.id.myTitle)).perform(typeText("new task"),closeSoftKeyboard());
+        onView(withId(R.id.myDescription)).perform(typeText("do something"),closeSoftKeyboard());
         onView(withId(R.id.myStatus)).perform(typeText("in progress"),closeSoftKeyboard());
 
         onView(withId(R.id.addTaskButton)).perform(click());
@@ -43,26 +42,30 @@ public class EspressoTest {
     }
 
     @Test
-    public void changingUserNameTest(){
-        onView(withId(R.id.settingsIcon)).perform(click());
-
-        onView(withId(R.id.userName)).perform(typeText("aseel"),closeSoftKeyboard());
-        onView(withId(R.id.addingUserName)).perform(click());
-
-        onView(withId(R.id.textView11)).check(matches(withText("aseel's tasks")));
-    }
-
-    @Test
     public void detailsPageTest(){
         onView(ViewMatchers.withId(R.id.songList)).check(matches(isDisplayed()));
 
         onView(withId(R.id.songList))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
 
-        onView(withId(R.id.textTitle)).check(matches(withText("New Task")));
-        onView(withId(R.id.textDes)).check(matches(withText("Do Something")));
-        onView(withId(R.id.textStatus)).check(matches(withText("in progress")));
+        onView(withId(R.id.showTitle)).check(matches(withText("new task")));
+        onView(withId(R.id.showDescription)).check(matches(withText("do something")));
+        onView(withId(R.id.showStatus)).check(matches(withText("in progress")));
     }
+
+    @Test
+    public void changingUserNameTest(){
+        onView(withId(R.id.settingsIcon)).perform(click());
+
+        onView(withId(R.id.userName)).perform(typeText("aseel"),closeSoftKeyboard());
+        onView(withId(R.id.addingUserName)).perform(click());
+    }
+
+    @Test
+    public void displayUserNameTest(){
+        onView(withId(R.id.textView11)).check(matches(withText("aseel's tasks")));
+    }
+
 
 
 }
