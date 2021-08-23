@@ -1,5 +1,6 @@
 projects:
   amplifyDatasource:
+
     schemaPath: app/src/main/graphql/schema.json
     includes:
       - app/src/main/graphql/**/*.graphql
@@ -16,3 +17,4 @@ projects:
 extensions:
   amplify:
     version: 3
+
