@@ -54,6 +54,10 @@ the user now can add a task and its discription and these data will be saved in 
 ### Home page:
 ![home](https://github.com/AseelHamamreh/taskmaster/blob/main/screetshots/home4.jpg)
 
+***
+
+##  Amplify and DynamoDB
+No new features, but now the data will be stored in DynamoDB insted of rooms.
 
 ## To run this app:
 1. clone the repo: ```https://github.com/AseelHamamreh/taskmaster.git```
