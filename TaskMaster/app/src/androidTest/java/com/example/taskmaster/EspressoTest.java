@@ -21,6 +21,7 @@ import androidx.test.espresso.contrib.RecyclerViewActions;
 
 import com.example.taskmaster.view.MainActivity;
 
+
 @RunWith(AndroidJUnit4.class)
 public class EspressoTest {
 
@@ -44,18 +45,6 @@ public class EspressoTest {
     }
 
     @Test
-    public void detailsPageTest(){
-        onView(ViewMatchers.withId(R.id.songList)).check(matches(isDisplayed()));
-
-        onView(withId(R.id.songList))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
-
-        onView(withId(R.id.showTitle)).check(matches(withText("new task")));
-        onView(withId(R.id.showDescription)).check(matches(withText("do something")));
-        onView(withId(R.id.showStatus)).check(matches(withText("in progress")));
-    }
-
-    @Test
     public void changingUserNameTest(){
         onView(withId(R.id.settingsIcon)).perform(click());
 
@@ -66,6 +55,18 @@ public class EspressoTest {
     @Test
     public void displayUserNameTest(){
         onView(withId(R.id.textView11)).check(matches(withText("aseel's tasks")));
+    }
+
+    @Test
+    public void detailsPageTest(){
+        onView(ViewMatchers.withId(R.id.songList)).check(matches(isDisplayed()));
+
+        onView(withId(R.id.songList))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
+
+        onView(withId(R.id.showTitle)).check(matches(withText("new task")));
+        onView(withId(R.id.showDescription)).check(matches(withText("do something")));
+        onView(withId(R.id.showStatus)).check(matches(withText("in progress")));
     }
 
 

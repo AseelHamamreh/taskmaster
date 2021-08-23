@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.TaskDetailsPage">
 
+
     <TextView
         android:id="@+id/showTitle"
         android:layout_width="wrap_content"
