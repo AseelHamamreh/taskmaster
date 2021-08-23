@@ -59,6 +59,15 @@ the user now can add a task and its discription and these data will be saved in 
 ##  Amplify and DynamoDB
 No new features, but now the data will be stored in DynamoDB insted of rooms.
 
+***
+
+## Related Data
+now the user can specify his tasks in a group while adding them.
+
+![addTask](https://github.com/AseelHamamreh/taskmaster/blob/main/screetshots/addTask5.jpg)
+
+***
+
 ## To run this app:
 1. clone the repo: ```https://github.com/AseelHamamreh/taskmaster.git```
 2. open the repo by Android Studio.
