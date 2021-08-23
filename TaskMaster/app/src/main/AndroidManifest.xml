@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.taskmaster">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMaster">
-        <activity android:name=".settingsPage" android:parentActivityName=".MainActivity">
+        <activity android:name=".view.settingsPage" android:parentActivityName=".view.MainActivity">
         </activity>
-        <activity android:name=".TaskDetailsPage" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".view.TaskDetailsPage" android:parentActivityName=".view.MainActivity"/>
         <activity
-            android:name=".AddTaskPage"
-            android:parentActivityName=".MainActivity" />
+            android:name=".view.AddTaskPage"
+            android:parentActivityName=".view.MainActivity" />
         <activity
-            android:name=".allTasksPage"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".view.allTasksPage"
+            android:parentActivityName=".view.MainActivity" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,7 +1,6 @@
-package com.example.taskmaster;
+package com.example.taskmaster.room;
 
 import androidx.room.ColumnInfo;
-import androidx.room.Dao;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -12,13 +11,13 @@ public class Task {
     private Long id;
 
     @ColumnInfo(name = "task_title")
-    private String title;
+    private final String title;
 
     @ColumnInfo(name = "task_body")
-    private String body;
+    private final String body;
 
     @ColumnInfo(name = "task_status")
-    private String state;
+    private final String state;
 
     public Task(String title, String body, String state) {
         this.title = title;

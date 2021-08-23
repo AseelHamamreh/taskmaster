@@ -1,26 +1,29 @@
-package com.example.taskmaster;
+package com.example.taskmaster.adapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amplifyframework.datastore.generated.model.Task;
+import com.example.taskmaster.R;
+import com.example.taskmaster.view.TaskDetailsPage;
+
 import java.util.List;
 
 public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
-    List<Task> data;
+    List<com.amplifyframework.datastore.generated.model.Task> data;
     Context context;
 
 
-    public myAdapter(Context ct, List<Task> l){
+    public myAdapter(Context ct, List<com.amplifyframework.datastore.generated.model.Task> l){
         context = ct;
         data=l;
     }
@@ -39,19 +42,15 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         holder.textView17.setText(item.getBody());
         holder.textView12.setText(item.getState());
 
-        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, TaskDetailsPage.class);
-                intent.putExtra("title", data.get(position).getTitle());
-                intent.putExtra("description", data.get(position).getBody());
-                intent.putExtra("status", data.get(position).getState());
-                context.startActivity(intent);
-            }
+        holder.mainLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(context, TaskDetailsPage.class);
+            intent.putExtra("title", data.get(position).getTitle());
+            intent.putExtra("description", data.get(position).getBody());
+            intent.putExtra("status", data.get(position).getState());
+            context.startActivity(intent);
         });
 
     }
-
 
 
     @Override
@@ -59,7 +58,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         return data.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView17 , textView15, textView12;
 
