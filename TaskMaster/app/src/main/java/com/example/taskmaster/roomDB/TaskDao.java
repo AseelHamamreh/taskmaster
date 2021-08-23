@@ -1,18 +1,12 @@
-package com.example.taskmaster;
+package com.example.taskmaster.roomDB;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
-
-import java.util.List;
+import com.example.taskmaster.adapter.Task;
 
 @Dao
 public interface TaskDao {
@@ -26,7 +20,4 @@ public interface TaskDao {
     @Query("SELECT * FROM task")
     List<Task> findAll();
 
-
-    @Delete
-    void deleteItem(Task task);
 }

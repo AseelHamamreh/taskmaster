@@ -1,4 +1,4 @@
-package com.example.taskmaster;
+package com.example.taskmaster.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.taskmaster.R;
 
 public class settingsPage extends AppCompatActivity {
     SharedPreferences sharedPreferences;

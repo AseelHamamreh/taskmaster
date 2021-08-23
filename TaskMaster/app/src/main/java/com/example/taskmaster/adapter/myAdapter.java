@@ -1,26 +1,29 @@
-package com.example.taskmaster;
+package com.example.taskmaster.adapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amplifyframework.datastore.generated.model.Task;
+import com.example.taskmaster.R;
+import com.example.taskmaster.View.TaskDetailsPage;
+
 import java.util.List;
 
 public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
-    List<Task> data;
+    List<com.amplifyframework.datastore.generated.model.Task> data;
     Context context;
 
 
-    public myAdapter(Context ct, List<Task> l){
+    public myAdapter(Context ct, List<com.amplifyframework.datastore.generated.model.Task> l){
         context = ct;
         data=l;
     }
@@ -36,16 +39,16 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull  myAdapter.MyViewHolder holder, int position) {
         Task item = data.get(position);
         holder.textView15.setText(item.getTitle());
-        holder.textView17.setText(item.getBody());
-        holder.textView12.setText(item.getState());
+        holder.textView17.setText(item.getDescription());
+        holder.textView12.setText(item.getStatus());
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, TaskDetailsPage.class);
                 intent.putExtra("title", data.get(position).getTitle());
-                intent.putExtra("description", data.get(position).getBody());
-                intent.putExtra("status", data.get(position).getState());
+                intent.putExtra("description", data.get(position).getDescription());
+                intent.putExtra("status", data.get(position).getStatus());
                 context.startActivity(intent);
             }
         });
