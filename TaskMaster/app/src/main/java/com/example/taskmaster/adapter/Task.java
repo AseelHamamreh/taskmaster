@@ -1,4 +1,4 @@
-package com.example.taskmaster;
+package com.example.taskmaster.adapter;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Dao;

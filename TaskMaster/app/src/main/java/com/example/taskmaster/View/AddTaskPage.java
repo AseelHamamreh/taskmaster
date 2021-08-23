@@ -1,15 +1,22 @@
-package com.example.taskmaster;
+package com.example.taskmaster.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.amplifyframework.api.graphql.model.ModelMutation;
+import com.amplifyframework.core.Amplify;
+import com.example.taskmaster.R;
+import com.example.taskmaster.adapter.Task;
+import com.example.taskmaster.roomDB.AppDataBase;
+import com.example.taskmaster.roomDB.TaskDao;
 
 public class AddTaskPage extends AppCompatActivity {
     private TaskDao taskDao;
@@ -42,11 +49,17 @@ public class AddTaskPage extends AppCompatActivity {
                 Task task = new Task(title, body, status);
                 taskDao.insertOne(task);
 
+                com.amplifyframework.datastore.generated.model.Task taskItem = com.amplifyframework.datastore.generated.model.Task.builder()
+                        .title(title).description(body).status(status)
+                        .build();
+
+                Amplify.DataStore.save(taskItem,
+                        success -> Log.i("savedItem", "Saved item: " + success.item().getTitle()),
+                        error -> Log.e("savedItem", "Could not save item to DataStore", error)
+                );
+
 
                 Toast.makeText(AddTaskPage.this,"Task added!", Toast.LENGTH_LONG).show();
-
-
-
             }
         });
     }

@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMaster">
-        <activity android:name=".settingsPage" android:parentActivityName=".MainActivity">
+        <activity android:name=".View.settingsPage" android:parentActivityName=".View.MainActivity">
         </activity>
-        <activity android:name=".TaskDetailsPage" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".View.TaskDetailsPage" android:parentActivityName=".View.MainActivity"/>
         <activity
-            android:name=".AddTaskPage"
-            android:parentActivityName=".MainActivity" />
+            android:name=".View.AddTaskPage"
+            android:parentActivityName=".View.MainActivity" />
         <activity
-            android:name=".allTasksPage"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".View.allTasksPage"
+            android:parentActivityName=".View.MainActivity" />
+        <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
