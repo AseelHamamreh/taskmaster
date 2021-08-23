@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+
         gettingDataFromAPI();
         renderRecycledView();
-
 
 
 
@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        gettingDataFromAPI();
+        renderRecycledView();
+
 
         TextView textView = findViewById(R.id.textView11);
 

@@ -45,16 +45,4 @@ public class settingsPage extends AppCompatActivity {
         editor.commit();
     }
 
-    public void filterData(){
-//        RadioGroup radioGroup = findViewById(R.id.radioGroup1);
-//        int radioId = radioGroup.getCheckedRadioButtonId();
-//        RadioButton radioButton = findViewById(radioId);
-//        String string = radioButton.toString();
-
-//        Log.i("myName", string);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("theTeam", "32803358-b4fa-407b-b67d-8de21eb3d3a1");
-        editor.commit();
-    }
-
 }

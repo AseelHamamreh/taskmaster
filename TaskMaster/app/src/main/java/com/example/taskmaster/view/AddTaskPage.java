@@ -42,7 +42,6 @@ public class AddTaskPage extends AppCompatActivity {
 
         getTeamsFromApiByName();
 
-
         //dataBase:
         appDataBase = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "tasks").allowMainThreadQueries().build();
         taskDao = appDataBase.taskDao();
@@ -76,6 +75,8 @@ public class AddTaskPage extends AppCompatActivity {
                         .filter(team1 -> team1.getName()
                                 .equals(teamName))
                         .collect(Collectors.toList()).get(0);
+                Log.i("getId", team.getId());
+
 
 
                 com.amplifyframework.datastore.generated.model.Task myTask = com.amplifyframework.datastore.generated.model.Task
