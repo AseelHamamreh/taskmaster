@@ -1,59 +1,62 @@
 # this is an auto generated file. This will be overwritten
-query SyncTodos(
-  $filter: ModelTodoFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncTodos(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
+query GetTask($id: ID!) {
+  getTask(id: $id) {
+    id
+    teamID
+    team {
       id
       name
-      description
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
-    nextToken
-    startedAt
-  }
-}
-query GetTodo($id: ID!) {
-  getTodo(id: $id) {
-    id
-    name
-    description
-    _version
-    _deleted
-    _lastChangedAt
+    title
+    body
+    state
     createdAt
     updatedAt
   }
 }
-query ListTodos(
-  $filter: ModelTodoFilterInput
+query ListTasks(
+  $filter: ModelTaskFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      name
-      description
-      _version
-      _deleted
-      _lastChangedAt
+      teamID
+      title
+      body
+      state
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
+  }
+}
+query GetTeam($id: ID!) {
+  getTeam(id: $id) {
+    id
+    name
+    tasks {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListTeams(
+  $filter: ModelTeamFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTeams(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    nextToken
   }
 }

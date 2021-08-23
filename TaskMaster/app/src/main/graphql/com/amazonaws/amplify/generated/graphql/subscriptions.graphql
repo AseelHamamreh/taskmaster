@@ -1,36 +1,84 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateTodo {
-  onCreateTodo {
+subscription OnCreateTask {
+  onCreateTask {
     id
-    name
-    description
-    _version
-    _deleted
-    _lastChangedAt
+    teamID
+    team {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    title
+    body
+    state
     createdAt
     updatedAt
   }
 }
-subscription OnUpdateTodo {
-  onUpdateTodo {
+subscription OnUpdateTask {
+  onUpdateTask {
     id
-    name
-    description
-    _version
-    _deleted
-    _lastChangedAt
+    teamID
+    team {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    title
+    body
+    state
     createdAt
     updatedAt
   }
 }
-subscription OnDeleteTodo {
-  onDeleteTodo {
+subscription OnDeleteTask {
+  onDeleteTask {
+    id
+    teamID
+    team {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    title
+    body
+    state
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateTeam {
+  onCreateTeam {
     id
     name
-    description
-    _version
-    _deleted
-    _lastChangedAt
+    tasks {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTeam {
+  onUpdateTeam {
+    id
+    name
+    tasks {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTeam {
+  onDeleteTeam {
+    id
+    name
+    tasks {
+      nextToken
+    }
     createdAt
     updatedAt
   }
