@@ -9,22 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMaster">
-        <activity android:name=".settingsPage" android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".TaskDetailsPage" android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".AddTaskPage"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".allTasksPage"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".views.signIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".views.verification" />
+        <activity android:name=".views.signUpPage">
+        </activity>
+        <activity
+            android:name=".views.settingsPage"
+            android:parentActivityName=".views.MainActivity" />
+        <activity
+            android:name=".views.TaskDetailsPage"
+            android:parentActivityName=".views.MainActivity" />
+        <activity
+            android:name=".views.AddTaskPage"
+            android:parentActivityName=".views.MainActivity" />
+        <activity
+            android:name=".views.allTasksPage"
+            android:parentActivityName=".views.MainActivity" />
+        <activity android:name=".views.MainActivity" />
     </application>
 
 </manifest>

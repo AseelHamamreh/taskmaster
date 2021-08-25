@@ -1,4 +1,4 @@
-package com.example.taskmaster;
+package com.example.taskmaster.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,9 +9,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.amplifyframework.auth.AuthUser;
+import com.amplifyframework.core.Amplify;
+import com.example.taskmaster.room.AppDataBase;
+import com.example.taskmaster.R;
+import com.example.taskmaster.room.Task;
+import com.example.taskmaster.room.TaskDao;
+import com.example.taskmaster.adapter.myAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,10 +72,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         TextView textView = findViewById(R.id.textView11);
+        textView.setText(getCurrentUser());
 
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("data", Context.MODE_PRIVATE);
-        String myName = sp.getString("myName","");
-        textView.setText(myName+"'s tasks");
+//        SharedPreferences sp = getApplicationContext().getSharedPreferences("data", Context.MODE_PRIVATE);
+//        String myName = sp.getString("myName","");
+//        textView.setText(myName+"'s tasks");
     }
 
     public void addingTask(View v){
@@ -88,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void studyingBtn(View view){
         String title = ((Button) findViewById(R.id.Studying)).getText().toString();
-        Intent intent= new Intent(this ,TaskDetailsPage.class);
+        Intent intent= new Intent(this , TaskDetailsPage.class);
         intent.putExtra("title", title);
         startActivity(intent);
     }
@@ -106,4 +116,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("title", title);
         startActivity(intent);
     }
+
+    String getCurrentUser(){
+        AuthUser authUser = Amplify.Auth.getCurrentUser();
+        Log.e("getCurrentUser", authUser.toString());
+        Log.e("getCurrentUser", authUser.getUserId());
+        Log.e("getCurrentUser", authUser.getUsername());
+        return authUser.getUsername();
+    }
+
 }

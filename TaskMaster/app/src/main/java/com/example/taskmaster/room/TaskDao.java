@@ -1,4 +1,4 @@
-package com.example.taskmaster;
+package com.example.taskmaster.room;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -7,12 +7,7 @@ import androidx.room.Query;
 
 import java.util.List;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
-
-import java.util.List;
+import com.example.taskmaster.room.Task;
 
 @Dao
 public interface TaskDao {

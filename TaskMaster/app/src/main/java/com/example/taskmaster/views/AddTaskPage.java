@@ -1,15 +1,19 @@
-package com.example.taskmaster;
+package com.example.taskmaster.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.taskmaster.room.AppDataBase;
+import com.example.taskmaster.R;
+import com.example.taskmaster.room.Task;
+import com.example.taskmaster.room.TaskDao;
 
 public class AddTaskPage extends AppCompatActivity {
     private TaskDao taskDao;

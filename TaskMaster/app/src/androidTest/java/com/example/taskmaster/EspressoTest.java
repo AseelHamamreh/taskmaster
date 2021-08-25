@@ -19,6 +19,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 
+import com.example.taskmaster.views.MainActivity;
+
 @RunWith(AndroidJUnit4.class)
 public class EspressoTest {
 

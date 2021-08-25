@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".views.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
+        tools:context=".views.MainActivity"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="-16dp">
 
@@ -29,11 +29,10 @@
             android:id="@+id/textView11"
             android:layout_width="115dp"
             android:layout_height="34dp"
-            android:layout_marginTop="136dp"
-            android:textStyle="bold"
+            android:layout_marginTop="132dp"
             android:textSize="15dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/songList" />
 
@@ -79,6 +78,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="92dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="96dp"
+            android:text="User Name:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songList" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
