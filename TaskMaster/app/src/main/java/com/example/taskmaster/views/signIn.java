@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
+import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 import com.example.taskmaster.R;
 
 public class signIn extends AppCompatActivity {
@@ -57,7 +58,9 @@ public class signIn extends AppCompatActivity {
     void configure(){
         try {
             Amplify.addPlugin(new AWSCognitoAuthPlugin());
+            Amplify.addPlugin(new AWSS3StoragePlugin());
             Amplify.configure(getApplicationContext());
+
             Log.e("testConfig", "success");
 
         } catch(AmplifyException exception){

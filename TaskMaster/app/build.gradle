@@ -75,7 +75,14 @@ dependencies {
     implementation 'com.amplifyframework:aws-api:1.24.0'
     implementation 'com.amplifyframework:aws-datastore:1.24.0'
     implementation 'com.amplifyframework:core:1.24.0'
+
+//    Amplify Auth:
     implementation 'com.amplifyframework:aws-auth-cognito:1.24.0'
+
+//    Amplify storage:
+    implementation 'com.amplifyframework:aws-storage-s3:1.24.0'
+    implementation 'com.amplifyframework:aws-auth-cognito:1.24.0'
+
 
 
 
