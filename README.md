@@ -68,6 +68,11 @@ now the user can specify his tasks in a group while adding them.
 
 ***
 
+## Cognito
+now the user can sign up and log in / log out from his account.
+
+***
+
 ## To run this app:
 1. clone the repo: ```https://github.com/AseelHamamreh/taskmaster.git```
 2. open the repo by Android Studio.
