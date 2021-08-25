@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
         myAdapter adapter = new myAdapter(this, taskList);
         taskRecyclerView.setAdapter(adapter);
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        Button logOut = findViewById(R.id.sLogout);
+
+        logOut.setOnClickListener(view -> {
+            logout();
+        });
     }
 
     @Override
@@ -124,5 +130,18 @@ public class MainActivity extends AppCompatActivity {
         Log.e("getCurrentUser", authUser.getUsername());
         return authUser.getUsername();
     }
+
+
+    public void logout(){
+        Amplify.Auth.signOut(
+                () ->{
+                    Log.i("logout", "successfully logout");
+                    Intent goToLogin = new Intent(getBaseContext(), signIn.class);
+                    startActivity(goToLogin);
+                } ,
+                error -> Log.e("logout", error.toString())
+        );
+    }
+
 
 }
